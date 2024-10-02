@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://40di2b6and2s"]
+
+[ext_resource type="Script" path="res://Scenes/Utilities/framerate_tracker.gd" id="1_21geu"]
+
+[node name="FPS Counter" type="Node"]
+script = ExtResource("1_21geu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
