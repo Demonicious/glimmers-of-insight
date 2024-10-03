@@ -1,0 +1,95 @@
+[gd_scene load_steps=17 format=3 uid="uid://bioxkx37qsw8x"]
+
+[ext_resource type="Texture2D" uid="uid://dnxj0bbd378lk" path="res://Assets/Prototype Textures/Red/texture_01.png" id="1_lle2x"]
+[ext_resource type="Texture2D" uid="uid://cvw2ycy5gt4h5" path="res://Assets/Prototype Textures/Dark/texture_13.png" id="1_m8oua"]
+[ext_resource type="Texture2D" uid="uid://chauh0jfs5ek8" path="res://Assets/Prototype Textures/Purple/texture_01.png" id="1_mcusd"]
+[ext_resource type="Texture2D" uid="uid://d3jiqoksnk3t7" path="res://Assets/Prototype Textures/Dark/texture_08.png" id="1_qijpo"]
+[ext_resource type="Texture2D" uid="uid://cfrqws6ihwbd4" path="res://Assets/Prototype Textures/Orange/texture_01.png" id="1_qy1r6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eea4m"]
+albedo_texture = ExtResource("1_lle2x")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b66ln"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_eea4m")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q8ekt"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2chd2"]
+albedo_texture = ExtResource("1_qy1r6")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_31mk5"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_2chd2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1pqk"]
+albedo_texture = ExtResource("1_mcusd")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7nqvj"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_g1pqk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gs8g2"]
+albedo_texture = ExtResource("1_qijpo")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mvfyf"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_gs8g2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38kvk"]
+albedo_texture = ExtResource("1_m8oua")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gd5gi"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_38kvk")
+
+[node name="Tiles" type="Node3D"]
+
+[node name="RedCube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_b66ln")
+skeleton = NodePath("../BlackCube")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RedCube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RedCube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q8ekt")
+
+[node name="OrangeCube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_31mk5")
+skeleton = NodePath("../BlackCube")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeCube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeCube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q8ekt")
+
+[node name="PinkCube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7nqvj")
+skeleton = NodePath("../BlackCube")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PinkCube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PinkCube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q8ekt")
+
+[node name="BlackFloorCube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_mvfyf")
+skeleton = NodePath("../BlackCube")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlackFloorCube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlackFloorCube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q8ekt")
+
+[node name="BlackCube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gd5gi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlackCube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlackCube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q8ekt")

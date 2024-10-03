@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkiidy3ew70fi"
+uid="uid://camtacnr7t8oy"
 path="res://.godot/imported/wall.gltf-ab2ba4c4121727d0a346a2fef97db502.scn"
 
 [deps]
@@ -31,13 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:wall": {
-"generate/physics": true,
-"physics/shape_type": 0
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

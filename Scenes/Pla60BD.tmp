@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bse4vlu3xnp0g"]
+
+[ext_resource type="PackedScene" uid="uid://de27krvok8gps" path="res://Scenes/Entities/Player.tscn" id="1_stgbe"]
+
+[node name="World" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(14.3522, 0, 0, 0, 1, 0, 0, 0, 12.044, 0.338663, 0, 0.243676)
+use_collision = true
+
+[node name="Mage" parent="." instance=ExtResource("1_stgbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109993, 0.846497, 0.655975)
+SPEED = 8.0
+LERP_WEIGHT = 14.0
+JUMP_FORCE = 8.0
+ORBIT_SPEED = 0.125
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5.4327, 7.64362)
+shadow_enabled = true
+shadow_opacity = 0.35
