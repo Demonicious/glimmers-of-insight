@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dh8q5fsl257n4"]
+
+[ext_resource type="Texture2D" uid="uid://c4bm5oiodo7se" path="res://Assets/Player/Mage_mage_texture.png" id="1_umnrv"]
+
+[resource]
+resource_name = "mage_texture"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_umnrv")
+roughness = 0.5

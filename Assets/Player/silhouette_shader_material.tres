@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ktu1tcpedoq0"]
+
+[ext_resource type="Material" uid="uid://dh8q5fsl257n4" path="res://Assets/Player/mage_texture.tres" id="1_rfnve"]
+[ext_resource type="Shader" path="res://Resources/Silhouette.gdshader" id="2_fdl2x"]
+
+[resource]
+render_priority = -1
+next_pass = ExtResource("1_rfnve")
+shader = ExtResource("2_fdl2x")
+shader_parameter/enable_glow = false
+shader_parameter/enable_lines = false
+shader_parameter/enable_flicker = false
+shader_parameter/enable_pattern = false
+shader_parameter/base_color = Vector4(0.7, 0.6, 0.95, 1)
+shader_parameter/glow_color = Vector4(0.5, 0.75, 1, 1)
+shader_parameter/glow_itensity = 4.5
+shader_parameter/glow_amount = 4.5
+shader_parameter/flickering = 0.55
+shader_parameter/line_width = 0.005
+shader_parameter/line_blur = 0.2
+shader_parameter/line_speed = 0.02
+shader_parameter/straight_lines = true
+shader_parameter/interrupt_width = 0.5
+shader_parameter/interrupt_blur = 0.25
+shader_parameter/interrupt_speed = 0.2
